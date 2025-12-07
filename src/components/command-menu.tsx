@@ -34,6 +34,21 @@ export function CommandMenu() {
       <CommandList>
         <ScrollArea type='hover' className='h-72 pe-1'>
           <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading='Actions'>
+            <CommandItem
+              value='Import Portfolio'
+              onSelect={() =>
+                runCommand(() =>
+                  navigate({ to: '/', search: { import: true } })
+                )
+              }
+            >
+              <div className='flex size-4 items-center justify-center'>
+                <ArrowRight className='text-muted-foreground/80 size-2' />
+              </div>
+              Import Portfolio
+            </CommandItem>
+          </CommandGroup>
           {sidebarData.navGroups.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
               {group.items.map((navItem, i) => {

@@ -4,8 +4,11 @@ import { NotificationsForm } from './notifications-form'
 export function SettingsNotifications() {
   return (
     <ContentSection
-      title='Notifications'
+      title='Settings › Notifications'
       desc='Configure how you receive notifications.'
+      titleClassName='text-base'
+      descClassName='text-xs'
+      compact
     >
       <NotificationsForm />
     </ContentSection>

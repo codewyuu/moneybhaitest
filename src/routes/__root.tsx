@@ -6,17 +6,20 @@ import { Toaster } from '@/components/ui/sonner'
 import { NavigationProgress } from '@/components/navigation-progress'
 import { GeneralError } from '@/features/errors/general-error'
 import { NotFoundError } from '@/features/errors/not-found-error'
+import { getCookie } from '@/lib/cookies'
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
 }>()({
   component: () => {
+    const isDev = import.meta.env.MODE === 'development'
+    const showDevtools = getCookie('show_devtools') === 'true'
     return (
       <>
         <NavigationProgress />
         <Outlet />
         <Toaster duration={5000} />
-        {import.meta.env.MODE === 'development' && (
+        {isDev && showDevtools && (
           <>
             <ReactQueryDevtools buttonPosition='bottom-left' />
             <TanStackRouterDevtools position='bottom-right' />

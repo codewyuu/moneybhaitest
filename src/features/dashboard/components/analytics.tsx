@@ -10,7 +10,7 @@ import { AnalyticsChart } from './analytics-chart'
 export function Analytics() {
   return (
     <div className='space-y-4'>
-      <Card>
+      <Card className='rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
         <CardHeader>
           <CardTitle>Traffic Overview</CardTitle>
           <CardDescription>Weekly clicks and unique visitors</CardDescription>
@@ -20,7 +20,7 @@ export function Analytics() {
         </CardContent>
       </Card>
       <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
-        <Card>
+        <Card className='rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
             <CardTitle className='text-sm font-medium'>Total Clicks</CardTitle>
             <svg
@@ -42,7 +42,7 @@ export function Analytics() {
             <p className='text-muted-foreground text-xs'>+12.4% vs last week</p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className='rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
             <CardTitle className='text-sm font-medium'>
               Unique Visitors
@@ -66,7 +66,7 @@ export function Analytics() {
             <p className='text-muted-foreground text-xs'>+5.8% vs last week</p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className='rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
             <CardTitle className='text-sm font-medium'>Bounce Rate</CardTitle>
             <svg
@@ -87,7 +87,7 @@ export function Analytics() {
             <p className='text-muted-foreground text-xs'>-3.2% vs last week</p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className='rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
             <CardTitle className='text-sm font-medium'>Avg. Session</CardTitle>
             <svg
@@ -111,7 +111,7 @@ export function Analytics() {
         </Card>
       </div>
       <div className='grid grid-cols-1 gap-4 lg:grid-cols-7'>
-        <Card className='col-span-1 lg:col-span-4'>
+        <Card className='col-span-1 lg:col-span-4 rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
           <CardHeader>
             <CardTitle>Referrers</CardTitle>
             <CardDescription>Top sources driving traffic</CardDescription>
@@ -129,7 +129,7 @@ export function Analytics() {
             />
           </CardContent>
         </Card>
-        <Card className='col-span-1 lg:col-span-3'>
+        <Card className='col-span-1 lg:col-span-3 rounded-xl bg-black/8 dark:bg-white/12 backdrop-blur-md border border-black/12 dark:border-white/25 ring-1 ring-black/10 dark:ring-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_10px_rgba(255,255,255,0.10)]'>
           <CardHeader>
             <CardTitle>Devices</CardTitle>
             <CardDescription>How users access your app</CardDescription>

@@ -1,64 +1,44 @@
-import { Link } from '@tanstack/react-router'
-import { Menu, X } from 'lucide-react'
-import { cn } from '@/lib/utils'
+// Removed toggle button and related imports
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
   useSidebar,
 } from '@/components/ui/sidebar'
-import { Button } from '../ui/button'
+import { Command } from 'lucide-react'
+// Button import no longer needed
 
 export function AppTitle() {
   const { setOpenMobile } = useSidebar()
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <SidebarMenuButton
-          size='lg'
-          className='gap-0 py-0 hover:bg-transparent active:bg-transparent'
-          asChild
-        >
-          <div>
-            <Link
-              to='/'
-              onClick={() => setOpenMobile(false)}
-              className='grid flex-1 text-start text-sm leading-tight'
-            >
-              <span className='truncate font-bold'>Shadcn-Admin</span>
-              <span className='truncate text-xs'>Vite + ShadcnUI</span>
-            </Link>
-            <ToggleSidebar />
-          </div>
-        </SidebarMenuButton>
+        <div className='relative flex items-center gap-2'>
+          <SidebarMenuButton
+            size='lg'
+            className='gap-2 py-0 hover:bg-transparent active:bg-transparent text-sidebar-foreground hover:text-sidebar-foreground active:text-sidebar-foreground group-data-[collapsible=icon]:p-2 group-data-[collapsible=icon]:justify-center'
+            asChild
+          >
+            <div className='relative flex items-center gap-2 h-full w-full'>
+              {/* Brand icon shown in collapsed icon mode */}
+              <span className='hidden group-data-[collapsible=icon]:inline-flex items-center justify-center size-5 opacity-100 transition-opacity group-hover/menu-item:opacity-0 peer-hover/menu-button:opacity-0'>
+                <Command className='size-4' />
+              </span>
+              {/* Brand text removed per request */}
+
+              {/* Collapsed overlay trigger centered over brand icon */}
+              <SidebarTrigger
+                className='hidden size-6 z-10 group-data-[collapsible=icon]:grid group-data-[collapsible=icon]:place-items-center group-data-[collapsible=icon]:absolute group-data-[collapsible=icon]:inset-0 group-data-[collapsible=icon]:opacity-0 group-hover/menu-item:opacity-100 peer-hover/menu-button:opacity-100 group-data-[collapsible=icon]:pointer-events-none group-hover/menu-item:pointer-events-auto peer-hover/menu-button:pointer-events-auto'
+              />
+            </div>
+          </SidebarMenuButton>
+          {/* Expanded mode trigger to the right of text */}
+          <SidebarTrigger
+            className='size-6 ms-1 inline-flex z-10 transition-opacity group-data-[collapsible=icon]:hidden'
+          />
+        </div>
       </SidebarMenuItem>
     </SidebarMenu>
-  )
-}
-
-function ToggleSidebar({
-  className,
-  onClick,
-  ...props
-}: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar()
-
-  return (
-    <Button
-      data-sidebar='trigger'
-      data-slot='sidebar-trigger'
-      variant='ghost'
-      size='icon'
-      className={cn('aspect-square size-8 max-md:scale-125', className)}
-      onClick={(event) => {
-        onClick?.(event)
-        toggleSidebar()
-      }}
-      {...props}
-    >
-      <X className='md:hidden' />
-      <Menu className='max-md:hidden' />
-      <span className='sr-only'>Toggle Sidebar</span>
-    </Button>
   )
 }

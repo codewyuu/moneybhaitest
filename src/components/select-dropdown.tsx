@@ -17,6 +17,8 @@ type SelectDropdownProps = {
   items: { label: string; value: string }[] | undefined
   disabled?: boolean
   className?: string
+  contentClassName?: string
+  itemClassName?: string
   isControlled?: boolean
 }
 
@@ -28,6 +30,8 @@ export function SelectDropdown({
   placeholder,
   disabled,
   className = '',
+  contentClassName = '',
+  itemClassName = '',
   isControlled = false,
 }: SelectDropdownProps) {
   const defaultState = isControlled
@@ -40,7 +44,7 @@ export function SelectDropdown({
           <SelectValue placeholder={placeholder ?? 'Select'} />
         </SelectTrigger>
       </FormControl>
-      <SelectContent>
+      <SelectContent className={cn(contentClassName)}>
         {isPending ? (
           <SelectItem disabled value='loading' className='h-14'>
             <div className='flex items-center justify-center gap-2'>
@@ -51,7 +55,7 @@ export function SelectDropdown({
           </SelectItem>
         ) : (
           items?.map(({ label, value }) => (
-            <SelectItem key={value} value={value}>
+            <SelectItem key={value} value={value} className={cn(itemClassName)}>
               {label}
             </SelectItem>
           ))

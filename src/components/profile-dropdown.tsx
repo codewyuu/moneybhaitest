@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import useDialogState from '@/hooks/use-dialog-state'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+import { useProfileStore } from '@/stores/profile-store'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +17,7 @@ import { SignOutDialog } from '@/components/sign-out-dialog'
 
 export function ProfileDropdown() {
   const [open, setOpen] = useDialogState()
+  const { avatarUrl } = useProfileStore()
 
   return (
     <>
@@ -23,7 +25,7 @@ export function ProfileDropdown() {
         <DropdownMenuTrigger asChild>
           <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
             <Avatar className='h-8 w-8'>
-              <AvatarImage src='/avatars/01.png' alt='@shadcn' />
+              <AvatarImage src={avatarUrl ?? '/avatars/01.png'} alt='@shadcn' />
               <AvatarFallback>SN</AvatarFallback>
             </Avatar>
           </Button>

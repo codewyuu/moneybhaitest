@@ -1,5 +1,4 @@
 import {
-  Construction,
   LayoutDashboard,
   Monitor,
   Bug,
@@ -21,31 +20,28 @@ import {
   AudioWaveform,
   Command,
   GalleryVerticalEnd,
+  Eye,
+  BookOpen,
+  BarChart3,
+  MessageSquare,
+  Users2,
+  Vote,
+  HardHat,
 } from 'lucide-react'
 import { ClerkLogo } from '@/assets/clerk-logo'
 import { type SidebarData } from '../types'
 
 export const sidebarData: SidebarData = {
   user: {
-    name: 'satnaing',
-    email: 'satnaingdev@gmail.com',
+    name: 'User',
+    email: 'user@moneybh.ai',
     avatar: '/avatars/shadcn.jpg',
   },
   teams: [
     {
-      name: 'Shadcn Admin',
+      name: 'Moneybh.Ai',
       logo: Command,
-      plan: 'Vite + ShadcnUI',
-    },
-    {
-      name: 'Acme Inc',
-      logo: GalleryVerticalEnd,
-      plan: 'Enterprise',
-    },
-    {
-      name: 'Acme Corp.',
-      logo: AudioWaveform,
-      plan: 'Startup',
+      plan: 'your financial assistant',
     },
   ],
   navGroups: [
@@ -53,49 +49,33 @@ export const sidebarData: SidebarData = {
       title: 'General',
       items: [
         {
-          title: 'Dashboard',
+          title: 'Explore',
           url: '/',
           icon: LayoutDashboard,
         },
         {
-          title: 'Tasks',
-          url: '/tasks',
-          icon: ListTodo,
-        },
-        {
-          title: 'Apps',
-          url: '/apps',
-          icon: Package,
-        },
-        {
-          title: 'Chats',
+          title: 'Chat',
           url: '/chats',
           badge: '3',
-          icon: MessagesSquare,
+          icon: MessageSquare,
+        },
+        
+        {
+          title: 'Trade Talkies',
+          url: '/trade-talkies',
+          icon: Users2,
         },
         {
-          title: 'Users',
-          url: '/users',
-          icon: Users,
+          title: 'Moneypoly',
+          url: '/moneypoly',
+          icon: Vote,
         },
         {
-          title: 'Secured by Clerk',
-          icon: ClerkLogo,
-          items: [
-            {
-              title: 'Sign In',
-              url: '/clerk/sign-in',
-            },
-            {
-              title: 'Sign Up',
-              url: '/clerk/sign-up',
-            },
-            {
-              title: 'User Management',
-              url: '/clerk/user-management',
-            },
-          ],
+          title: 'Learn',
+          url: '/learn',
+          icon: BookOpen,
         },
+        // Removed: duplicate Profile shortcut (Profile exists under Settings group)
       ],
     },
     {
@@ -154,7 +134,7 @@ export const sidebarData: SidebarData = {
             {
               title: 'Maintenance Error',
               url: '/errors/maintenance-error',
-              icon: Construction,
+              icon: HardHat,
             },
           ],
         },
@@ -193,11 +173,6 @@ export const sidebarData: SidebarData = {
               icon: Monitor,
             },
           ],
-        },
-        {
-          title: 'Help Center',
-          url: '/help-center',
-          icon: HelpCircle,
         },
       ],
     },
